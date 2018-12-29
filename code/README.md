@@ -1,0 +1,3 @@
+- `python -m baselines.pRHEA.run_pRHEA` trains the algorithm on Mujoco tasks.
+- `python -m baselines.pRHEA.plot_pRHEA` shows the training curves.
+- `python -m baselines.pRHEA.play_pRHEA` loads the saved model and runs the task online.

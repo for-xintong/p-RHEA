@@ -93,7 +93,7 @@ class Model(object):
         train_model = policy(self.sess, ob_space, ac_space, nbatch, nsteps, reuse=True)
 
         neglogpac = cat_neglogpac(train_model.mean, train_model.logstd, A)
-        pg_loss = tf.reduce_mean(ADV * neglogpac)
+        pg_loss = tf.reduce_mean(neglogpac)
         vf_loss = 0.5 * tf.reduce_mean(tf.square(train_model.vf - R))
         entropy = tf.reduce_mean(cat_entropy(train_model.logstd))
         loss = pg_loss - entropy * ent_coef + vf_loss * vf_coef
